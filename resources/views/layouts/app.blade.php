@@ -75,13 +75,17 @@
             </div>
         </nav>
 
-        
+        @if (session('message'))
+
         <div class="m-5">
             <div class="alert alert-primary alert-dismissible fade show" role="alert">
-                {{}}
+                {{ session('message') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
         </div>
+                        
+        @endif
+        
 
         <main class="py-4">
             @yield('content')
