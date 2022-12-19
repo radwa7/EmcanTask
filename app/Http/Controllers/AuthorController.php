@@ -57,7 +57,7 @@ class AuthorController extends Controller
     {
         $post = Post::findOrFail($postId);
         $post->delete();
-        return view('home')->with('message','Post deleted');
+        return redirect('home')->with('message','Post deleted');
     }
 
 
@@ -119,7 +119,7 @@ class AuthorController extends Controller
     {
         $comment = Comment::findOrFail($commentId);
         $comment->delete();
-        return view('home')->with('message','comment deleted');
+        return redirect('home')->with('message','comment deleted');
         
     }
 }
