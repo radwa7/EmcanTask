@@ -28,11 +28,17 @@ Route::middleware('isAdmin')->group(function(){
 
 
 //Author
+//posts
 Route::get('/submitPost',[\App\Http\Controllers\AuthorController::class, 'submitPost']);
 Route::post('/savePost',[\App\Http\Controllers\AuthorController::class, 'savePost']);
 Route::get('editPost/{postId}',[\App\Http\Controllers\AuthorController::class, 'editPost']);
 Route::post('/updatePost/{postId}',[\App\Http\Controllers\AuthorController::class, 'updatePost']);
 Route::get('listPosts',[\App\Http\Controllers\AuthorController::class, 'listPosts']);
 Route::get('deletePost/{postId}',[\App\Http\Controllers\AuthorController::class, 'deletePost']);
-
-
+//comments
+Route::get('/addComment',[\App\Http\Controllers\AuthorController::class, 'addComment']);
+Route::get('/addComment/{postId}',[\App\Http\Controllers\AuthorController::class, 'addCommentToPost']);
+Route::post('/saveComment',[\App\Http\Controllers\AuthorController::class, 'saveComment']);
+Route::get('/editComment/{commentId}',[\App\Http\Controllers\AuthorController::class, 'editComment']);
+Route::post('/updateComment/{CommentId}',[\App\Http\Controllers\AuthorController::class, 'updateComment']);
+Route::get('deleteComment/{commentId}',[\App\Http\Controllers\AuthorController::class, 'deleteComment']);
