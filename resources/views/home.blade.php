@@ -22,11 +22,9 @@
              your comments
             </div>
             <div class="row d-flex justify-content-center m-3">
-                <a href="#" class="col-6 btn btn-primary">Show All Comments</a>
+                <a href="listComments" class="col-6 btn btn-primary">Show All Comments</a>
             </div>
-            <div class="row d-flex justify-content-center m-3">
-                <a href="/addComment" class="col-6 btn btn-success">Add New Comments</a>
-            </div>
+            
         </div>
     </div>
 

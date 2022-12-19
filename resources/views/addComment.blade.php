@@ -25,13 +25,11 @@
             <h3>Add New Comment</h3>
             <div class="mb-3">
 
-                <label for="post_id" class="form-label">Add comment to post number</label>
-                @if (isset($postId))
-                    
-                <input type="text" class="form-control" name="post_id" id="post_id" placeholder="post number" value="{{$postId}}">
-                @else
-                <input type="text" class="form-control" name="post_id" id="post_id" placeholder="post number">
-                @endif
+                
+                <label for="post_id" class="form-label">Add comment to post {{$postId}}</label>
+                <input type="hidden" class="form-control" name="post_id" id="post_id" placeholder="post number" value="{{$postId}}">
+                
+                
           </div>
           <div class="mb-3">
             <label for="content" class="form-label">content</label>

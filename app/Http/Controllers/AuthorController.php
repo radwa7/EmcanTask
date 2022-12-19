@@ -63,6 +63,14 @@ class AuthorController extends Controller
 
     //commetns
 
+    public function listComments()
+    {
+        
+        $comments = Comment::all()->where('author_id',Auth::user()->id);
+        
+        return view('listComments',['comments'=>$comments]);
+    }
+
     public function addComment()
     {
         
