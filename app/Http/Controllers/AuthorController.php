@@ -57,7 +57,7 @@ class AuthorController extends Controller
     {
         $post = Post::findOrFail($postId);
         $post->delete();
-        return view('listPosts')->with('message','Post deleted');
+        return view('home')->with('message','Post deleted');
     }
 
 
