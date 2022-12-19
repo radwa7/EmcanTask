@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+{{-- checks if authenticated user is admin
+then shows all posts and comments of all authors --}}
 @if (Auth::user()->role == 'admin')
  <div class="container">
 
@@ -36,6 +38,8 @@
  </div>
 
 @else
+{{-- else if user is author add posts and comments 
+then show only posts and comments fot authenticated user --}}
     <div class="container mt-5">
         <div class="row mb-5">
             <div class="col-5 border" style="margin-left: 30px; ">

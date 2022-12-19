@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthorController extends Controller
 {
+    //Posts Crud Functoins
+    //create
     public function submitPost()
     {
         return view('submitPost');
@@ -28,6 +30,7 @@ class AuthorController extends Controller
         return redirect('home')->with('message','Post created');
     }
 
+    //show
     public function listPosts()
     {
         $posts = Post::all()->where('user_id',Auth::user()->id);
@@ -35,6 +38,7 @@ class AuthorController extends Controller
         return view('listPosts',['posts'=> $posts, 'comments'=>$comments]);
     }
 
+    //update
     public function editPost($postId)
     {
         $post = Post::findOrFail($postId);
@@ -53,6 +57,7 @@ class AuthorController extends Controller
         return redirect('home')->with('message','Post updated');
     }
 
+    //delete
     public function deletePost($postId)
     {
         $post = Post::findOrFail($postId);
@@ -61,8 +66,9 @@ class AuthorController extends Controller
     }
 
 
-    //commetns
+    //Commetns CRUD functions
 
+    //show
     public function listComments()
     {
         
@@ -71,12 +77,8 @@ class AuthorController extends Controller
         return view('listComments',['comments'=>$comments]);
     }
 
-    public function addComment()
-    {
-        
-        return view('addComment');
-    }
     
+    //create
     public function addCommentToPost($postId)
     {
         return view('addComment',['postId'=>$postId]);
@@ -96,6 +98,7 @@ class AuthorController extends Controller
         return redirect('home')->with('message','comment created');
     }
 
+    //update
     public function editComment($commentId)
     {
         $comment = Comment::findOrFail($commentId);
@@ -115,6 +118,7 @@ class AuthorController extends Controller
         return redirect('home')->with('message','Comment updated');
     }
 
+    //delete
     public function deleteComment($commentId)
     {
         $comment = Comment::findOrFail($commentId);

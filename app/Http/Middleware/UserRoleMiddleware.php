@@ -17,15 +17,16 @@ class UserRoleMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-
+        //checks if user is authenticated
         if (Auth::check()) {
-            
+            //check if user is admin
             if (Auth::user()->role == 'admin') {
                 return $next($request);
             }else{
+                //denies access for non admin
                 return redirect('/home')->with('message','Access Denied');
             }
-
+        //denies access for not authenticated users
         }else{
             return redirect('/login')->with('message','Please Log in first');
 

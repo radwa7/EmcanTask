@@ -17,7 +17,6 @@
         <div class="card-body">
             <div class="row border-bottom m-3 pb-3 "> 
                 <h5 class="col-5">{{$post->title}}</h5>
-                {{-- <span class="col-3"></span> --}}
                 <a href="/editPost/{{$post->id}}" style="margin-right: 10px" class="btn btn-success col-3 ">Edit post</a>
                 <a href="/deletePost/{{$post->id}}" class="btn btn-danger col-3 ">Delete post</a>
             </div>

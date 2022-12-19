@@ -7,6 +7,7 @@ use App\Models\Post;
 
 class ApiController extends Controller
 {
+    //return all posts and comments for admin
     public function adminDashboard()
     {
             
@@ -19,6 +20,7 @@ class ApiController extends Controller
         
     }
 
+    //return only the auhtor's posts and comments 
     public function authorDashboard($id)
     {
         $posts =  Post::all()->where('user_id',$id);
